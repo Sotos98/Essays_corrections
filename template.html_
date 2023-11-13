@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+.essay-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  padding: 20px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.candidate-id-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: #e74c3c; /* This is an example orange color; adjust as needed */
+    color: #000000; /* Black text */
+    font-weight: bold; /* Bold text */
+    z-index: 1000; /* Ensure it's above other content */
+    
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 0;
+  width: 100%;
+}
+.original, .corrected {
+  width: 47%;
+  padding: 20px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.corrected {
+  border-left: 2px solid black;
+  padding-left: 30px;
+  margin-left: 3%;
+}
+.Spelling {
+    background-color: #ff6666; 
+}
+.Punctuation {
+    background-color: #66ff66;  
+}
+.Grammar {
+    background-color: #6699ff; 
+}
+.Typography {
+    background-color: #ffff66; 
+}
+.analysis {
+  clear: both;
+  margin-top: 20px;
+  padding: 25px;
+}
+.analysis-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.analysis-item {
+  margin-bottom: 10px;
+}
+.footer {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: right;
+}
+.mistake-list > li:has(> strong) {
+  list-style-type: none;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="essay-container">
+
+    <div class="candidate-id-container" >
+        Candidate ID: {{candidate_id}} & Question ID: {{Q_ID}}
+    </div>
+
+    <div class="original">
+        <div class="title">Original</div>
+      {{original_text}}
+    </div>
+
+    <div class="corrected">
+        <div class="title">Corrected</div>
+      {{corrected_text}}
+    </div>
+
+    <div class="analysis">
+        <h3>Analysis</h3>
+        <ul class="mistake-list">
+            {{mistake_analysis}}
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+</html>
